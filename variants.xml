@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE VARIANTS [
+	<!ELEMENT VARIANTS (DESCRIPTION, MAP_DEFINITION+, VARIANT+)>
+	
+	<!ELEMENT DESCRIPTION (#PCDATA)>
+	
+	<!ELEMENT MAP_DEFINITION (DESCRIPTION?)>
+	<!ATTLIST MAP_DEFINITION 
+		id ID #REQUIRED
+		title CDATA #REQUIRED
+		URI CDATA #REQUIRED
+		thumbURI CDATA #REQUIRED
+		preferredUnitStyle CDATA #IMPLIED
+		>
+	
+	<!ELEMENT VARIANT (DESCRIPTION, MAP, RULEOPTIONS?, POWER+, STARTINGTIME, VICTORYCONDITIONS, SUPPLYCENTER+, INITIALSTATE*)>
+	<!ATTLIST VARIANT
+			name CDATA #REQUIRED
+			default (true|false) "false"
+			version CDATA #REQUIRED
+			aliases CDATA #IMPLIED
+			>
+			
+	<!ELEMENT MAP (MAP_GRAPHIC*)>
+	<!ATTLIST MAP adjacencyURI CDATA #REQUIRED>
+	
+	<!ELEMENT MAP_GRAPHIC EMPTY>
+	<!ATTLIST MAP_GRAPHIC
+			ref IDREF #REQUIRED
+			default (true|false) "false"
+			preferredUnitStyle CDATA #IMPLIED
+			>
+	
+	<!ELEMENT RULEOPTIONS (RULEOPTION+)>
+	<!ELEMENT RULEOPTION EMPTY>
+	<!ATTLIST RULEOPTION	name CDATA #REQUIRED
+				value CDATA #REQUIRED>
+	
+	<!ELEMENT POWER EMPTY>
+	<!ATTLIST POWER name CDATA #REQUIRED
+			active (true|false) "true"
+			adjective CDATA #REQUIRED
+			altnames CDATA #IMPLIED
+			>
+	
+	<!ELEMENT STARTINGTIME EMPTY>
+	<!ATTLIST STARTINGTIME 	turn CDATA #REQUIRED
+				allowBCYears (true|false) "false"
+				>
+	
+	<!ELEMENT VICTORYCONDITIONS (WINNING_SUPPLY_CENTERS?, YEARS_WITHOUT_SC_CAPTURE?, GAME_LENGTH?)>
+	
+	<!ELEMENT WINNING_SUPPLY_CENTERS EMPTY>
+	<!ATTLIST WINNING_SUPPLY_CENTERS value CDATA #REQUIRED>
+	
+	<!ELEMENT YEARS_WITHOUT_SC_CAPTURE EMPTY>
+	<!ATTLIST YEARS_WITHOUT_SC_CAPTURE value CDATA #REQUIRED>
+	
+	<!ELEMENT GAME_LENGTH EMPTY>
+	<!ATTLIST GAME_LENGTH value CDATA #REQUIRED>
+	
+	<!ELEMENT SUPPLYCENTER EMPTY>
+	<!ATTLIST SUPPLYCENTER 	province CDATA #REQUIRED
+				homepower CDATA "none"
+				owner CDATA "none"
+				>
+				
+	<!ELEMENT INITIALSTATE EMPTY>
+	<!ATTLIST INITIALSTATE 	province CDATA #REQUIRED
+				power CDATA #REQUIRED
+				unit CDATA #REQUIRED
+				unitcoast CDATA #IMPLIED
+				>
+]>
+<!-- NOTE: it's very important that the name of the file will be variants.xml, in all lower case -->
+<!-- NOTE: for CDATA escapes, no space between tag and bracket!! -->
+<VARIANTS>
+	<DESCRIPTION><![CDATA[<div style="font-family:arial,helvetica;">
+	Westeros Variants
+	</p>]]></DESCRIPTION>
+	
+	
+	<MAP_DEFINITION id="westeros" title="Westeros" 
+		URI="westeros.svg" thumbURI="westeros_thumb.png" preferredUnitStyle="imperium">
+		<DESCRIPTION>
+		The Westeros map.
+		</DESCRIPTION>
+	</MAP_DEFINITION>
+	
+	<VARIANT name="Westeros" version="1.0">
+		<DESCRIPTION><![CDATA[
+		The Westeros variant of diplomacy follows the same rules as standard
+		diplomacy with an Westeros map.
+		
+		</p>]]></DESCRIPTION> 
+		<MAP adjacencyURI="westeros_adjacency.xml">
+			<MAP_GRAPHIC ref="westeros" default="true" />
+		</MAP>
+		<RULEOPTIONS>
+			<RULEOPTION name="OPTION_BUILDS" value="VALUE_BUILDS_HOME_ONLY" />
+		</RULEOPTIONS>
+		<POWER name="Arryn" active="true" adjective="Arryn" /> 
+		<POWER name="Baratheon" active="true" adjective="Baratheon" /> 
+		<POWER name="Greyjoy" active="true" adjective="Geyjoy" /> 
+		<POWER name="Lannister" active="true" adjective="Lannister" /> 
+		<POWER name="Martell" active="true" adjective="Martell" />
+		<POWER name="Stark" active="true" adjective="Stark" /> 
+		<POWER name="Tully" active="true" adjective="Tully" /> 
+		<POWER name="Tyrell" active="true" adjective="Tyrell" /> 
+		
+		<STARTINGTIME turn="Spring, 01, Movement" />
+		
+		<VICTORYCONDITIONS>
+			<WINNING_SUPPLY_CENTERS value="20" />
+		</VICTORYCONDITIONS>
+ 	 	
+		<!-- owned supply centers -->
+		<SUPPLYCENTER province="wal" homepower="stark" owner="stark"/>
+		<SUPPLYCENTER province="win" homepower="stark" owner="stark"/>
+		<SUPPLYCENTER province="wh" homepower="stark" owner="stark"/>
+
+		<SUPPLYCENTER province="eyr" homepower="arryn" owner="arryn"/>
+		<SUPPLYCENTER province="fin" homepower="arryn" owner="arryn"/>
+		<SUPPLYCENTER province="bg" homepower="arryn" owner="arryn"/>
+
+		<SUPPLYCENTER province="sea" homepower="tully" owner="tully"/>
+		<SUPPLYCENTER province="rr" homepower="tully" owner="tully"/>
+		<SUPPLYCENTER province="ah" homepower="tully" owner="tully"/>
+
+		<SUPPLYCENTER province="lan" homepower="lannister" owner="lannister"/>
+		<SUPPLYCENTER province="ss" homepower="lannister" owner="lannister"/>
+		<SUPPLYCENTER province="cas" homepower="lannister" owner="lannister"/>
+
+		<SUPPLYCENTER province="sto" homepower="baratheon" owner="baratheon"/>
+		<SUPPLYCENTER province="kl" homepower="baratheon" owner="baratheon"/>
+		<SUPPLYCENTER province="dra" homepower="baratheon" owner="baratheon"/>
+
+		<SUPPLYCENTER province="hig" homepower="tyrell" owner="tyrell"/>
+		<SUPPLYCENTER province="old" homepower="tyrell" owner="tyrell"/>
+		<SUPPLYCENTER province="arb" homepower="tyrell" owner="tyrell"/>
+
+		<SUPPLYCENTER province="yro" homepower="martell" owner="martell"/>
+		<SUPPLYCENTER province="san" homepower="martell" owner="martell"/>
+		<SUPPLYCENTER province="sun" homepower="martell" owner="martell"/>
+
+		<SUPPLYCENTER province="gwk" homepower="greyjoy" owner="greyjoy"/>
+		<SUPPLYCENTER province="ork" homepower="greyjoy" owner="greyjoy"/>
+		<SUPPLYCENTER province="pyk" homepower="greyjoy" owner="greyjoy"/>
+
+		
+		<!-- neutral supply centers -->
+		<SUPPLYCENTER province="ska"/>
+		<SUPPLYCENTER province="ff"/>
+		<SUPPLYCENTER province="mc"/>
+		<SUPPLYCENTER province="gww"/>
+		<SUPPLYCENTER province="twi"/>
+		<SUPPLYCENTER province="har"/>
+		<SUPPLYCENTER province="sp"/>
+		<SUPPLYCENTER province="cra"/>
+		<SUPPLYCENTER province="tar"/>
+		<SUPPLYCENTER province="cw"/>
+		<SUPPLYCENTER province="bla"/>
+		<SUPPLYCENTER province="crk"/>
+		<SUPPLYCENTER province="sta"/>
+		<SUPPLYCENTER province="si"/>
+		
+		<!-- unit placement -->
+		<INITIALSTATE province="wal" power="stark" unit="army"/>
+		<INITIALSTATE province="win" power="stark" unit="army"/>
+		<INITIALSTATE province="wh" power="stark" unit="fleet"/>
+
+		<INITIALSTATE province="eyr" power="arryn" unit="army"/>
+		<INITIALSTATE province="fin" power="arryn" unit="fleet"/>
+		<INITIALSTATE province="bg" power="arryn" unit="army"/>
+
+		<INITIALSTATE province="sea" power="tully" unit="fleet"/>
+		<INITIALSTATE province="rr" power="tully" unit="army"/>
+		<INITIALSTATE province="ah" power="tully" unit="army"/>
+
+		<INITIALSTATE province="lan" power="lannister" unit="fleet"/>
+		<INITIALSTATE province="ss" power="lannister" unit="army"/>
+		<INITIALSTATE province="cas" power="lannister" unit="army"/>
+
+		<INITIALSTATE province="sto" power="baratheon" unit="army"/>
+		<INITIALSTATE province="kl" power="baratheon" unit="army"/>
+		<INITIALSTATE province="dra" power="baratheon" unit="fleet"/>
+
+		<INITIALSTATE province="hig" power="tyrell" unit="army"/>
+		<INITIALSTATE province="old" power="tyrell" unit="army"/>
+		<INITIALSTATE province="arb" power="tyrell" unit="fleet"/>
+
+		<INITIALSTATE province="yro" power="martell" unit="army"/>
+		<INITIALSTATE province="san" power="martell" unit="army"/>
+		<INITIALSTATE province="sun" power="martell" unit="fleet"/>
+
+		<INITIALSTATE province="gwk" power="greyjoy" unit="fleet"/>
+		<INITIALSTATE province="ork" power="greyjoy" unit="fleet"/>
+		<INITIALSTATE province="pyk" power="greyjoy" unit="army"/>
+	</VARIANT>
+</VARIANTS>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<project name="jDip-Westeros-Variant" default="build" basedir=".">
+    <target name="clean">
+	<delete file="${basedir}/westerosVariants.zip"/>
+    </target>
+
+    <target name="build">
+	<zip destfile="${basedir}/westerosVariants.zip"
+	     basedir="${basedir}"
+	     excludes="*~ *.zip prov.svg *.py"
+	     includes="*.xml *.jpg *.png *.svg *.gif"/>
+    </target>
+</project>

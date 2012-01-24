@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<!DOCTYPE PROVINCES [
+	<!ELEMENT PROVINCES (BORDER_DEFINITIONS?, PROVINCE+)>
+	
+	<!-- ===================================================================== -->
+	<!ELEMENT BORDER_DEFINITIONS (BORDER+)>
+	
+	<!ELEMENT BORDER EMPTY>
+	<!ATTLIST BORDER	
+				id ID #REQUIRED
+				description CDATA #REQUIRED
+				from CDATA #IMPLIED
+				unitTypes CDATA #IMPLIED
+				orderTypes CDATA #IMPLIED
+				year CDATA #IMPLIED
+				season CDATA #IMPLIED
+				phase CDATA #IMPLIED
+				baseMoveModifier CDATA #IMPLIED
+				>
+				
+	<!-- ===================================================================== -->
+	<!ELEMENT PROVINCE (UNIQUENAME*, ADJACENCY+)>
+	<!ATTLIST PROVINCE 	
+				shortname CDATA #REQUIRED
+				fullname CDATA #REQUIRED
+				isConvoyableCoast (true|false) "false"
+				borders IDREFS #IMPLIED
+				>	
+	
+				
+	<!ELEMENT UNIQUENAME EMPTY>
+	<!ATTLIST UNIQUENAME name CDATA #REQUIRED>
+	
+	<!ELEMENT ADJACENCY EMPTY>
+	<!ATTLIST ADJACENCY 	
+				type (mv|xc|nc|sc|wc|ec) "mv"
+				refs CDATA #REQUIRED
+				>
+]>
+<!-- Westeros adjacency -->
+<PROVINCES>
+        <PROVINCE fullname="Acorn Hall" shortname="ah">
+                <ADJACENCY type="mv" refs="rr, rfk, sil, gde, fmi" />
+        </PROVINCE>
+        <PROVINCE fullname="The Arbor" shortname="arb">
+                <ADJACENCY type="mv" refs="" />
+                <ADJACENCY type="xc" refs="rws, wss" />
+        </PROVINCE>
+        <PROVINCE fullname="Bloody Gate" shortname="bg">
+                <ADJACENCY type="mv" refs="tri, har, sp, voa, fin, eyr, mom" />
+        </PROVINCE>
+        <PROVINCE fullname="Bear Island" shortname="bi">
+                <ADJACENCY type="mv" refs="dm, win" />
+                <ADJACENCY type="xc" refs="boi" />
+        </PROVINCE>
+        <PROVINCE fullname="The Bite" shortname="bit">
+                <ADJACENCY type="mv" refs="wh, mc, gww, twi, mom, eyr, fin" />
+                <ADJACENCY type="xc" refs="fgs, bos" />
+        </PROVINCE>
+        <PROVINCE fullname="Blackhaven" shortname="bla">
+                <ADJACENCY type="mv" refs="rea, cid, drm, cw, sto" />
+                <ADJACENCY type="xc" refs="sod, cw, drm" />
+        </PROVINCE>
+        <PROVINCE fullname="Blue Fork" shortname="blu">
+                <ADJACENCY type="mv" refs="sea, twi, tri, fmi" />
+                <ADJACENCY type="xc" refs="ib, sea, fmi" />
+        </PROVINCE>
+        <PROVINCE fullname="Bay of Crabs" shortname="boc">
+                <ADJACENCY type="mv" refs="gul, sp, ccp" />
+                <ADJACENCY type="xc" refs="nns" />
+        </PROVINCE>
+        <PROVINCE fullname="Bay of Ice" shortname="boi">
+                <ADJACENCY type="xc" refs="wal, bi, win, dm, bzb" />
+        </PROVINCE>
+        <PROVINCE fullname="Bay of Seals" shortname="bos">
+                <ADJACENCY type="xc" refs="ska, wal, win, kar, wh, bit, fgs, nns" />
+        </PROVINCE>
+        <PROVINCE fullname="Blackwater Bay" shortname="bwb">
+                <ADJACENCY type="xc" refs="ccp, dus, kl, sha, dra, nns, mns" />
+        </PROVINCE>
+        <PROVINCE fullname="Brightwater Keep" shortname="bwk">
+                <ADJACENCY type="mv" refs="crk, hig, si" />
+                <ADJACENCY type="xc" refs="sus, wss, rws" />
+        </PROVINCE>
+        <PROVINCE fullname="Blazewater Bay" shortname="bzb">
+                <ADJACENCY type="xc" refs="dm, ts, mc, ff, gwk, ork, boi, ib, cks" />
+        </PROVINCE>
+        <PROVINCE fullname="Casterly Rock" shortname="cas">
+                <ADJACENCY type="mv" refs="cra, rfk, sil, lan" />
+                <ADJACENCY type="xc" refs="cks, sus, lan, cra" />
+        </PROVINCE>
+        <PROVINCE fullname="Crackclaw Point" shortname="ccp">
+                <ADJACENCY type="mv" refs="sp, har, gde, dus" />
+                <ADJACENCY type="xc" refs="boc, nns, bwb" />
+        </PROVINCE>
+        <PROVINCE fullname="Cider Hall" shortname="cid">
+                <ADJACENCY type="mv" refs="sil, crk, hig, drm, bla, rea" />
+        </PROVINCE>
+        <PROVINCE fullname="Cape Kraken Sea" shortname="cks">
+                <ADJACENCY type="xc" refs="gwk, cra, cas, pyk, bzb, ib, sus" />
+        </PROVINCE>
+        <PROVINCE fullname="The Crag" shortname="cra">
+                <ADJACENCY type="mv" refs="cas, rfk, gol" />
+                <ADJACENCY type="xc" refs="ib, cks, gol, cas" />
+        </PROVINCE>
+        <PROVINCE fullname="Crakehall" shortname="crk">
+                <ADJACENCY type="mv" refs="lan, sil, cid, hig, bwk" />
+                <ADJACENCY type="xc" refs="sus, lan, bwk" />
+        </PROVINCE>
+        <PROVINCE fullname="Cape Wrath" shortname="cw">
+                <ADJACENCY type="mv" refs="sto, bla" />
+                <ADJACENCY type="xc" refs="sbb, sns, sod, sto, bla" />
+        </PROVINCE>
+        <PROVINCE fullname="Deepwood Motte" shortname="dm">
+                <ADJACENCY type="mv" refs="bi, win, ts" />
+                <ADJACENCY type="xc" refs="boi, bzb, win, ts" />
+        </PROVINCE>
+        <PROVINCE fullname="Dragon Stone" shortname="dra">
+                <ADJACENCY type="mv" refs="" />
+                <ADJACENCY type="xc" refs="nns, bwb, mns" />
+        </PROVINCE>
+        <PROVINCE fullname="The Dornish Marches" shortname="drm">
+                <ADJACENCY type="mv" refs="bla, cid, hig, hh, vr, yro" />
+                <ADJACENCY type="xc" refs="sod, bla, yro" />
+        </PROVINCE>
+        <PROVINCE fullname="Duskendale" shortname="dus">
+                <ADJACENCY type="mv" refs="ccp, gde, ss, kl" />
+                <ADJACENCY type="xc" refs="bwb, ccp, kl" />
+        </PROVINCE>
+        <PROVINCE fullname="East Summer Sea" shortname="ess">
+                <ADJACENCY type="mv" refs="san, sun" />
+                <ADJACENCY type="xc" refs="wss, sns" />
+        </PROVINCE>
+        <PROVINCE fullname="The Eyrie" shortname="eyr">
+                <ADJACENCY type="mv" refs="mom, bg, fin" />
+                <ADJACENCY type="xc" refs="bit, mom, fin" />
+        </PROVINCE>
+        <PROVINCE fullname="Flint's Finger" shortname="ff">
+                <ADJACENCY type="mv" refs="mc, gww" />
+                <ADJACENCY type="xc" refs="bzb, ib, mc, gww" />
+        </PROVINCE>
+        <PROVINCE fullname="Fingers Sea" shortname="fgs">
+                <ADJACENCY type="xc" refs="nns, bit, bos, fin, voa, gul" />
+        </PROVINCE>
+        <PROVINCE fullname="The Fingers" shortname="fin">
+                <ADJACENCY type="mv" refs="eyr, bg, voa" />
+                <ADJACENCY type="xc" refs="bit, fgs, eyr, voa" />
+        </PROVINCE>
+        <PROVINCE fullname="Fairmarket Inn" shortname="fmi">
+                <ADJACENCY type="mv" refs="rr, ah, gde, har, tri, blu" />
+                <ADJACENCY type="xc" refs="ib, rr, blu" />
+        </PROVINCE>
+        <PROVINCE fullname="God's Eye" shortname="gde">
+                <ADJACENCY type="mv" refs="fmi, ah, sil, ss, dus, ccp, har" />
+        </PROVINCE>
+        <PROVINCE fullname="Golden Tooth" shortname="gol">
+                <ADJACENCY type="mv" refs="cra, rfk, rr" />
+                <ADJACENCY type="xc" refs="ib, rr, cra" />
+        </PROVINCE>
+        <PROVINCE fullname="Gulltown" shortname="gul">
+                <ADJACENCY type="mv" refs="voa, sp" />
+                <ADJACENCY type="xc" refs="fgs, boc, nns, voa, sp" />
+        </PROVINCE>
+        <PROVINCE fullname="Great Wyk" shortname="gwk">
+                <ADJACENCY type="mv" refs="ork, pyk" />
+                <ADJACENCY type="xc" refs="bzb, ib, cks" />
+        </PROVINCE>
+        <PROVINCE fullname="Greywater Watch" shortname="gww">
+                <ADJACENCY type="mv" refs="mc, ff, sea, twi" />
+                <ADJACENCY type="wc" refs="ib,ff, blu" />
+                <ADJACENCY type="ec" refs="bit, mc, twi" />
+        </PROVINCE>
+        <PROVINCE fullname="Lord Harroway's Town" shortname="har">
+                <ADJACENCY type="mv" refs="tri, fmi, gde, ccp, sp, bg" />
+        </PROVINCE>
+        <PROVINCE fullname="Horn Hill" shortname="hh">
+                <ADJACENCY type="mv" refs="old, hig, drm, vr, sta" />
+                <ADJACENCY type="xc" refs="wss, old, sta" />
+        </PROVINCE>
+        <PROVINCE fullname="Highgarden" shortname="hig">
+                <ADJACENCY type="mv" refs="crk, bwk, old, hh, drm, cid" />
+                <ADJACENCY type="xc" refs="rws, bwk, old" />
+        </PROVINCE>
+        <PROVINCE fullname="Harlaw" shortname="hrl">
+                <ADJACENCY type="mv" refs="ork, pyk" />
+                <ADJACENCY type="xc" refs="ib" />
+        </PROVINCE>
+        <PROVINCE fullname="Ironman's Bay" shortname="ib">
+                <ADJACENCY type="xc" refs="ff, gww, sea, blu, fmi, rr, gol, cra, hrl, pyk, gwk, ork, bzb, cks" />
+        </PROVINCE>
+        <PROVINCE fullname="Karhold" shortname="kar">
+                <ADJACENCY type="mv" refs="win, wh, ska" />
+                <ADJACENCY type="xc" refs="bos, wal, wh" />
+        </PROVINCE>
+        <PROVINCE fullname="King's Landing" shortname="kl">
+                <ADJACENCY type="mv" refs="dus, ss, rea, sto, sha" />
+                <ADJACENCY type="xc" refs="bwb, dus, sha" />
+        </PROVINCE>
+        <PROVINCE fullname="Lannisport" shortname="lan">
+                <ADJACENCY type="mv" refs="cas, sil, crk, si" />
+                <ADJACENCY type="xc" refs="sus, crk, cas" />
+        </PROVINCE>
+        <PROVINCE fullname="Moat Cailin" shortname="mc">
+                <ADJACENCY type="mv" refs="ts, ff, gww, wh" />
+                <ADJACENCY type="wc" refs="bzb, ts, ff" />
+                <ADJACENCY type="ec" refs="bit, ts, gww" />
+        </PROVINCE>
+        <PROVINCE fullname="Mid Narrow Sea" shortname="mns">
+                <ADJACENCY type="xc" refs="sns, sbb, bwb, nns, dra, sha, tar" />
+        </PROVINCE>
+        <PROVINCE fullname="Mountains of the Moon" shortname="mom">
+                <ADJACENCY type="mv" refs="twi, tri, bg, eyr" />
+                <ADJACENCY type="xc" refs="bit" />
+        </PROVINCE>
+        <PROVINCE fullname="North Narrow Sea" shortname="nns">
+                <ADJACENCY type="xc" refs="bos, fgs, boc, bwb, mns, gul, ccp, dra" />
+        </PROVINCE>
+        <PROVINCE fullname="Oldtown" shortname="old">
+                <ADJACENCY type="mv" refs="hig, hh" />
+                <ADJACENCY type="xc" refs="rws, wss, hig, hh" />
+        </PROVINCE>
+        <PROVINCE fullname="Orkmont" shortname="ork">
+                <ADJACENCY type="mv" refs="gwk, pyk, hrl" />
+                <ADJACENCY type="xc" refs="ib, bzb" />
+        </PROVINCE>
+        <PROVINCE fullname="Pyke" shortname="pyk">
+                <ADJACENCY type="mv" refs="gwk, ork, hrl" />
+                <ADJACENCY type="xc" refs="ib, cks" />
+        </PROVINCE>
+        <PROVINCE fullname="The Reach" shortname="rea">
+                <ADJACENCY type="mv" refs="ss, sil, cid, bla, sto, kl" />
+        </PROVINCE>
+        <PROVINCE fullname="Red Fork" shortname="rfk">
+                <ADJACENCY type="mv" refs="gol, cra, cas, sil, ah, rr" />
+        </PROVINCE>
+        <PROVINCE fullname="Riverrun" shortname="rr">
+                <ADJACENCY type="mv" refs="gol, rfk, ah, fmi" />
+                <ADJACENCY type="xc" refs="ib, gol, fmi" />
+        </PROVINCE>
+        <PROVINCE fullname="Redwyne Straits" shortname="rws">
+                <ADJACENCY type="xc" refs="bwk, hig, old, arb, wss" />
+        </PROVINCE>
+        <PROVINCE fullname="Sandstone" shortname="san">
+                <ADJACENCY type="mv" refs="sta, vr, yro, sun" />
+                <ADJACENCY type="xc" refs="wss, ess, sta, sun" />
+        </PROVINCE>
+        <PROVINCE fullname="Shipbreaker Bay" shortname="sbb">
+                <ADJACENCY type="mv" refs="sha, sto, cw, tar, sns, mns" />
+        </PROVINCE>
+        <PROVINCE fullname="Seagard" shortname="sea">
+                <ADJACENCY type="mv" refs="gww, twi, blu" />
+                <ADJACENCY type="xc" refs="ib, gww, blu" />
+        </PROVINCE>
+        <PROVINCE fullname="Sharp Point" shortname="sha">
+                <ADJACENCY type="mv" refs="kl, sto" />
+                <ADJACENCY type="xc" refs="bwb, mns, sbb, kl, sto" />
+        </PROVINCE>
+        <PROVINCE fullname="Shield Islands" shortname="si">
+                <ADJACENCY type="mv" refs="lan, bwk" />
+                <ADJACENCY type="xc" refs="sus" />
+        </PROVINCE>
+        <PROVINCE fullname="Silverhall" shortname="sil">
+                <ADJACENCY type="mv" refs="ah, rfk, cas, lan, crk, cid, rea, ss, gde" />
+        </PROVINCE>
+        <PROVINCE fullname="Skagos" shortname="ska">
+                <ADJACENCY type="mv" refs="wal, kar" />
+                <ADJACENCY type="xc" refs="bos" />
+        </PROVINCE>
+        <PROVINCE fullname="South Narrow Sea" shortname="sns">
+                <ADJACENCY type="xc" refs="sun, tor, cw, tar, ess, sod, sbb, mns" />
+        </PROVINCE>
+        <PROVINCE fullname="Sea of Dorne" shortname="sod">
+                <ADJACENCY type="xc" refs="cw, bla, drm, yro, tor, sns" />
+        </PROVINCE>
+        <PROVINCE fullname="Saltpans" shortname="sp">
+                <ADJACENCY type="mv" refs="har, ccp, gul, voa, bg" />
+                <ADJACENCY type="xc" refs="boc, ccp, gul" />
+        </PROVINCE>
+        <PROVINCE fullname="Stoney Sept" shortname="ss">
+                <ADJACENCY type="mv" refs="gde, sil, rea, kl, dus" />
+        </PROVINCE>
+        <PROVINCE fullname="Starfall" shortname="sta">
+                <ADJACENCY type="mv" refs="hh, vr, san" />
+                <ADJACENCY type="xc" refs="wss, hh, san" />
+        </PROVINCE>
+        <PROVINCE fullname="Storm's End" shortname="sto">
+                <ADJACENCY type="mv" refs="sha, kl, rea, bla, cw" />
+                <ADJACENCY type="xc" refs="sbb, cw, sha" />
+        </PROVINCE>
+        <PROVINCE fullname="Sunspear" shortname="sun">
+                <ADJACENCY type="mv" refs="san, yro, tor" />
+                <ADJACENCY type="xc" refs="ess, sns, tor, san, tor" />
+        </PROVINCE>
+        <PROVINCE fullname="Sunset Sea" shortname="sus">
+                <ADJACENCY type="xc" refs="cas, lan, si, crk, bwk, cks, wss" />
+        </PROVINCE>
+        <PROVINCE fullname="Tarth" shortname="tar">
+                <ADJACENCY type="mv" refs="" />
+                <ADJACENCY type="xc" refs="mns, sbb, sns" />
+        </PROVINCE>
+        <PROVINCE fullname="The Tor" shortname="tor">
+                <ADJACENCY type="mv" refs="yro, sun" />
+                <ADJACENCY type="xc" refs="sod, sns, sun, yro" />
+        </PROVINCE>
+        <PROVINCE fullname="The Trident" shortname="tri">
+                <ADJACENCY type="mv" refs="twi, blu, fmi, har, bg, mom" />
+        </PROVINCE>
+        <PROVINCE fullname="Torrhen's Square" shortname="ts">
+                <ADJACENCY type="mv" refs="dm, win, wh, mc" />
+                <ADJACENCY type="xc" refs="bzb, dm, mc" />
+        </PROVINCE>
+        <PROVINCE fullname="The Twins" shortname="twi">
+                <ADJACENCY type="mv" refs="gww, sea, blu, tri, mom" />
+                <ADJACENCY type="xc" refs="bit, gww, mom" />
+        </PROVINCE>
+        <PROVINCE fullname="Vale of Arryn" shortname="voa">
+                <ADJACENCY type="mv" refs="fin, bg, sp, gul" />
+                <ADJACENCY type="xc" refs="fgs, fin, gul" />
+        </PROVINCE>
+        <PROVINCE fullname="Vulture's Roost" shortname="vr">
+                <ADJACENCY type="mv" refs="drm, hh, sta, san, yro" />
+        </PROVINCE>
+        <PROVINCE fullname="The Wall" shortname="wal">
+                <ADJACENCY type="mv" refs="win, ska" />
+                <ADJACENCY type="wc" refs="boi, win" />
+                <ADJACENCY type="ec" refs="bos, win" />
+        </PROVINCE>
+        <PROVINCE fullname="White Harbor" shortname="wh">
+                <ADJACENCY type="mv" refs="ts, win, kar, mc" />
+                <ADJACENCY type="xc" refs="bos, bit, ts, kar" />
+        </PROVINCE>
+        <PROVINCE fullname="Winterfell" shortname="win">
+                <ADJACENCY type="mv" refs="wal, bi, dm, ts, wh, kar" />
+                <ADJACENCY type="wc" refs="boi, dm, wal" />
+                <ADJACENCY type="ec" refs="bos, kar, wal" />
+        </PROVINCE>
+        <PROVINCE fullname="West Summer Sea" shortname="wss">
+                <ADJACENCY type="xc" refs="bwk, arb, old, hh, sta, san, sus, rws, ess" />
+        </PROVINCE>
+        <PROVINCE fullname="Yronwood" shortname="yro">
+                <ADJACENCY type="mv" refs="drm, vr, san, sun, tor" />
+                <ADJACENCY type="xc" refs="sod, drm ,tor" />
+        </PROVINCE>
+</PROVINCES>
