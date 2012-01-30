@@ -54,8 +54,7 @@
                 <ADJACENCY type="xc" refs="boi" />
         </PROVINCE>
         <PROVINCE fullname="The Bite" shortname="bit">
-                <ADJACENCY type="mv" refs="wh, mc, gww, twi, mom, eyr, fin" />
-                <ADJACENCY type="xc" refs="fgs, bos" />
+                <ADJACENCY type="xc" refs="wh, mc-ec, gww-ec, twi, mom, eyr, fin, fgs, bos" />
         </PROVINCE>
         <PROVINCE fullname="Blackhaven" shortname="bla">
                 <ADJACENCY type="mv" refs="rea, cid, drm, cw, sto" />
@@ -70,10 +69,10 @@
                 <ADJACENCY type="xc" refs="nns" />
         </PROVINCE>
         <PROVINCE fullname="Bay of Ice" shortname="boi">
-                <ADJACENCY type="xc" refs="wal, bi, win, dm, bzb" />
+                <ADJACENCY type="xc" refs="wal-wc, bi, win-wc, dm, bzb" />
         </PROVINCE>
         <PROVINCE fullname="Bay of Seals" shortname="bos">
-                <ADJACENCY type="xc" refs="ska, wal, win, kar, wh, bit, fgs, nns" />
+                <ADJACENCY type="xc" refs="ska, wal-ec, win-ec, kar, wh, bit, fgs, nns" />
         </PROVINCE>
         <PROVINCE fullname="Blackwater Bay" shortname="bwb">
                 <ADJACENCY type="xc" refs="ccp, dus, kl, sha, dra, nns, mns" />
@@ -83,7 +82,7 @@
                 <ADJACENCY type="xc" refs="sus, wss, rws" />
         </PROVINCE>
         <PROVINCE fullname="Blazewater Bay" shortname="bzb">
-                <ADJACENCY type="xc" refs="dm, ts, mc, ff, gwk, ork, boi, ib, cks" />
+                <ADJACENCY type="xc" refs="dm, ts, mc-wc, ff, gwk, ork, boi, ib, cks" />
         </PROVINCE>
         <PROVINCE fullname="Casterly Rock" shortname="cas">
                 <ADJACENCY type="mv" refs="cra, rfk, sil, lan" />
@@ -167,7 +166,7 @@
         </PROVINCE>
         <PROVINCE fullname="Greywater Watch" shortname="gww">
                 <ADJACENCY type="mv" refs="mc, ff, sea, twi" />
-                <ADJACENCY type="wc" refs="ib,ff, blu" />
+                <ADJACENCY type="wc" refs="ib, ff, blu" />
                 <ADJACENCY type="ec" refs="bit, mc, twi" />
         </PROVINCE>
         <PROVINCE fullname="Lord Harroway's Town" shortname="har">
@@ -186,7 +185,7 @@
                 <ADJACENCY type="xc" refs="ib" />
         </PROVINCE>
         <PROVINCE fullname="Ironman's Bay" shortname="ib">
-                <ADJACENCY type="xc" refs="ff, gww, sea, blu, fmi, rr, gol, cra, hrl, pyk, gwk, ork, bzb, cks" />
+                <ADJACENCY type="xc" refs="ff, gww-wc, sea, blu, fmi, rr, gol, cra, hrl, pyk, gwk, ork, bzb, cks" />
         </PROVINCE>
         <PROVINCE fullname="Karhold" shortname="kar">
                 <ADJACENCY type="mv" refs="win, wh, ska" />
@@ -249,7 +248,7 @@
         </PROVINCE>
         <PROVINCE fullname="Seagard" shortname="sea">
                 <ADJACENCY type="mv" refs="gww, twi, blu" />
-                <ADJACENCY type="xc" refs="ib, gww, blu" />
+                <ADJACENCY type="xc" refs="ib, gww-wc, blu" />
         </PROVINCE>
         <PROVINCE fullname="Sharp Point" shortname="sha">
                 <ADJACENCY type="mv" refs="kl, sto" />

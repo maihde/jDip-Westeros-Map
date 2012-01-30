@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" 
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"
+[
+	<!-- jDip-specific XML additions -->
+	<!-- PROVINCE_DATA -->
+	<!ENTITY %% svgExt "| jdipNS:PROVINCE_DATA" >
+	
+	<!ELEMENT jdipNS:PROVINCE_DATA (jdipNS:PROVINCE)+>
+	<!ATTLIST jdipNS:PROVINCE_DATA
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  dislodgedUnitOffset CDATA #IMPLIED
+	  >
+	<!ELEMENT jdipNS:PROVINCE (jdipNS:UNIT, jdipNS:DISLODGED_UNIT, jdipNS:SUPPLY_CENTER?)+>
+	<!ATTLIST jdipNS:PROVINCE
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  name CDATA #REQUIRED
+	  >
+	<!ELEMENT jdipNS:UNIT EMPTY>
+	<!ATTLIST jdipNS:UNIT
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  x CDATA #REQUIRED
+	  y CDATA #REQUIRED
+	  >
+	<!ELEMENT jdipNS:DISLODGED_UNIT EMPTY>
+	<!ATTLIST jdipNS:DISLODGED_UNIT
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  x CDATA #REQUIRED
+	  y CDATA #REQUIRED
+	  >
+	<!ELEMENT jdipNS:SUPPLY_CENTER EMPTY>
+	<!ATTLIST jdipNS:SUPPLY_CENTER
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  x CDATA #REQUIRED
+	  y CDATA #REQUIRED
+	  >
+	  
+	<!-- Display Parameters -->
+	<!ENTITY %% svgExt "| jdipNS:DISPLAY" >
+	
+	<!ELEMENT jdipNS:DISPLAY (jdipNS:ZOOM, jdipNS:LABELS)>
+	<!ATTLIST jdipNS:DISPLAY
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  >
+	<!ELEMENT jdipNS:ZOOM EMPTY>
+	<!ATTLIST jdipNS:ZOOM
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  min CDATA #REQUIRED
+	  max CDATA #REQUIRED
+	  factor CDATA #REQUIRED
+	  >
+	<!ELEMENT jdipNS:LABELS EMPTY>
+	<!ATTLIST jdipNS:LABELS
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  brief (true|false) "true"
+	  full (true|false) "true"
+	  >
+	  
+	  <!-- Order Drawing Parameters -->
+	<!ENTITY %% svgExt "| jdipNS:ORDERDRAWING" >
+	
+	<!ELEMENT jdipNS:ORDERDRAWING (jdipNS:POWERCOLORS, jdipNS:SYMBOLSIZE+, jdipNS:BUILD, jdipNS:REMOVE,  jdipNS:DISBAND, jdipNS:WAIVE, jdipNS:HOLD, jdipNS:MOVE, jdipNS:RETREAT, jdipNS:SUPPORT, jdipNS:CONVOY )>
+	<!ATTLIST jdipNS:ORDERDRAWING
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  >
+	
+	<!ELEMENT jdipNS:POWERCOLORS (jdipNS:POWERCOLOR+)>
+	<!ATTLIST jdipNS:POWERCOLORS
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  >
+	
+	<!ELEMENT jdipNS:POWERCOLOR EMPTY>
+	<!ATTLIST jdipNS:POWERCOLOR
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  power CDATA #REQUIRED
+	  color CDATA #REQUIRED
+	  >
+	  
+	<!ELEMENT jdipNS:SYMBOLSIZE EMPTY>
+	<!ATTLIST jdipNS:SYMBOLSIZE
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  name CDATA #REQUIRED
+	  width CDATA #REQUIRED
+	  height CDATA #REQUIRED
+	  >
+	
+	  <!ELEMENT jdipNS:HOLD EMPTY>
+	<!ATTLIST jdipNS:HOLD
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  strokeCSSStyle CDATA #REQUIRED
+	  filterID CDATA #IMPLIED
+	  hilightOffset CDATA #REQUIRED
+	  hilightCSSClass CDATA #REQUIRED
+	  widths CDATA #REQUIRED
+	  shadowWidths CDATA #REQUIRED
+	  >
+	  
+	<!ELEMENT jdipNS:DISBAND EMPTY>
+	<!ATTLIST jdipNS:DISBAND
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  >
+	
+	<!ELEMENT jdipNS:WAIVE EMPTY>
+	<!ATTLIST jdipNS:WAIVE
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	>
+	  
+	<!ELEMENT jdipNS:REMOVE EMPTY>
+	<!ATTLIST jdipNS:REMOVE
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  >
+	  
+	<!ELEMENT jdipNS:BUILD EMPTY>
+	<!ATTLIST jdipNS:BUILD
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  >
+	
+	<!ELEMENT jdipNS:MOVE EMPTY>
+	<!ATTLIST jdipNS:MOVE
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  strokeCSSStyle CDATA #REQUIRED
+	  markerID CDATA #REQUIRED
+	  filterID CDATA #IMPLIED
+	  hilightOffset CDATA #REQUIRED
+	  hilightCSSClass CDATA #REQUIRED
+	  widths CDATA #REQUIRED
+	  shadowWidths CDATA #REQUIRED
+	  >
+	
+	<!ELEMENT jdipNS:RETREAT EMPTY>
+	<!ATTLIST jdipNS:RETREAT
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  strokeCSSStyle CDATA #REQUIRED
+	  markerID CDATA #REQUIRED
+	  filterID CDATA #IMPLIED
+	  hilightOffset CDATA #REQUIRED
+	  hilightCSSClass CDATA #REQUIRED
+	  >
+	
+	<!ELEMENT jdipNS:SUPPORT EMPTY>
+	<!ATTLIST jdipNS:SUPPORT
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  strokeCSSStyle CDATA #REQUIRED
+	  markerID CDATA #REQUIRED
+	  filterID CDATA #IMPLIED
+	  hilightOffset CDATA #REQUIRED
+	  hilightCSSClass CDATA #REQUIRED
+	  >
+	
+	<!ELEMENT jdipNS:CONVOY EMPTY>
+	<!ATTLIST jdipNS:CONVOY
+	  xmlns:jdipNS CDATA #FIXED "http://jdip.sourceforge.org/jdipNS"
+	  deltaRadius CDATA #REQUIRED
+	  strokeCSSStyle CDATA #REQUIRED
+	  markerID CDATA #REQUIRED
+	  filterID CDATA #IMPLIED
+	  hilightOffset CDATA #REQUIRED
+	  hilightCSSClass CDATA #REQUIRED
+	  >
+]>
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="916px" height="2202px"
+     viewBox="0 0 916 2202">
+
+    <jdipNS:DISPLAY>
+	<jdipNS:ZOOM min="5" max="1000" factor="1.2" />
+	<jdipNS:LABELS brief="true" full="false" />
+    </jdipNS:DISPLAY>
+
+  <jdipNS:ORDERDRAWING>
+    <jdipNS:POWERCOLORS>
+      <jdipNS:POWERCOLOR power="arryn" color="blue" />
+      <jdipNS:POWERCOLOR power="baratheon" color="yellow" />
+      <jdipNS:POWERCOLOR power="greyjoy" color="purple" />
+      <jdipNS:POWERCOLOR power="lannister" color="red" />
+      <jdipNS:POWERCOLOR power="martell" color="orange" />
+      <jdipNS:POWERCOLOR power="stark" color="gray" />
+      <jdipNS:POWERCOLOR power="tyrell" color="green" />
+      <jdipNS:POWERCOLOR power="tully" color="deepskyblue" />
+    </jdipNS:POWERCOLORS>
+    
+    <jdipNS:SYMBOLSIZE name="Fleet" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="Army" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="Wing" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="DislodgedFleet" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="DislodgedArmy" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="DislodgedWing" width="40" height="40"/>
+    <jdipNS:SYMBOLSIZE name="FailedOrder" width="30" height="30"/>
+    <jdipNS:SYMBOLSIZE name="SupplyCenter" width="20" height="20"/>
+    <jdipNS:SYMBOLSIZE name="BuildUnit" width="50" height="50"/>
+    <jdipNS:SYMBOLSIZE name="RemoveUnit" width="60" height="60"/>
+    <jdipNS:SYMBOLSIZE name="WaivedBuild" width="70" height="70"/>
+    
+    <jdipNS:BUILD deltaRadius="0"/>
+    <jdipNS:REMOVE deltaRadius="2"/>
+    <jdipNS:DISBAND deltaRadius="2"/>
+    <jdipNS:WAIVE deltaRadius="0"/>
+    <jdipNS:HOLD deltaRadius="2" strokeCSSStyle="varwidthorder" hilightOffset="0" hilightCSSClass="varwidthshadow" widths="2,3.5,5,6.5" shadowWidths="4,5.5,7,8.5"/>
+    <jdipNS:MOVE deltaRadius="2" strokeCSSStyle="varwidthorder" markerID="arrow" hilightOffset="0"  hilightCSSClass="varwidthshadow" widths="3,5,7,9" shadowWidths="5,7,9,11"/>
+    <jdipNS:RETREAT deltaRadius="2" strokeCSSStyle="defaultorder" markerID="arrow" hilightOffset="0"  hilightCSSClass="shadoworder" />
+    <jdipNS:SUPPORT deltaRadius="5" strokeCSSStyle="supportorder" markerID="arrow" hilightOffset="0" hilightCSSClass="shadowdash"/>
+    <jdipNS:CONVOY deltaRadius="5" strokeCSSStyle="convoyorder" markerID="arrow" hilightOffset="0"  hilightCSSClass="shadowdash"/>
+  </jdipNS:ORDERDRAWING>
+
+  <jdipNS:PROVINCE_DATA>
+%(PROVINCE_DATA)s
+  </jdipNS:PROVINCE_DATA>
+
+  <title>Westeros</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+	  
+	  /* text */
+	  .coasttext 	{text-anchor:middle;stroke-width:0.25px;font-family:sansserif;font-size:12px;stroke:black;fill:black;}
+	  .labeltext	{font-family:arial,sansserif;font-size:20px;text-anchor:middle;stroke-width:0.30px;stroke:black;fill:black;}
+	  
+	  /* map and unit features */
+	  
+	  .seapoly			{stroke:#000000;stroke-width:1;fill:#B5DEF8}
+	  .coastdash			{stroke:#555555;stroke-width:1;stroke-dasharray:3,1.5;}
+	  .connector			{stroke:red;stroke-width:4;fill:red}
+	  .sealine 			{stroke:#B5DEFF;stroke-width:3;}
+	  .impassable 		        {fill:#A69F8F;stroke:black;stroke-width:1}
+	  .impassablewater 	        {fill:#8AADD1;stroke:black;stroke-width:1}
+	  .nopower 			{fill:#F7DB94;stroke:black;stroke-width:1}
+	  .shadow			{stroke:black;fill:black;stroke-width:1;opacity:0.40;}
+	  .dislodgedshadow	        {stroke:black;fill:black;stroke-width:1;opacity:0.30;}
+	  .unordered 			{fill:red; stroke:black; stroke-width:1;fill-opacity:0.90;}
+	  
+	  /* invisible click rects fill:none does not work */
+	  
+	  .invisible	{stroke:#000000;fill:#000000;fill-opacity:0.0;opacity:0.0}
+	  
+	  /* default region coloring, by power */
+	  
+	  .nopower 	{fill:antiquewhite;		stroke:#000000;stroke-width:1}
+	  .water	{fill:lightblue;		stroke:#000000;stroke-width:1}
+	  
+	  .neutral	{fill:lightgray;		stroke:#000000;stroke-width:1}
+
+	  .arryn 	{fill:dodgerblue;		stroke:#000000;stroke-width:1}
+	  .baratheon 	{fill:gold;			stroke:#000000;stroke-width:1}
+	  .greyjoy 	{fill:mediumpurple;		stroke:#000000;stroke-width:1}
+	  .lannister 	{fill:indianred;		stroke:#000000;stroke-width:1}
+	  .martell 	{fill:sandybrown;		stroke:#000000;stroke-width:1}
+	  .stark 	{fill:dimgray;			stroke:#000000;stroke-width:1}
+	  .tyrell 	{fill:olivedrab;		stroke:#000000;stroke-width:1}
+	  .tully 	{fill:lightskyblue;		stroke:#000000;stroke-width:1}
+
+	  /* unit colors, by power note that underscores are not supported */
+	  
+	  .unitarryn		{fill:blue;		fill-opacity:0.85}
+	  .unitbaratheon 	{fill:yellow;		fill-opacity:0.85}
+	  .unitgreyjoy 		{fill:purple;		fill-opacity:0.85}
+	  .unitlannister 	{fill:red;		fill-opacity:0.85}
+	  .unitmartell 		{fill:orange;		fill-opacity:0.85}
+	  .unitstark 		{fill:gray;		fill-opacity:1.0}
+	  .unittyrell 		{fill:green;		fill-opacity:0.85}
+	  .unittully		{fill:deepskyblue;	fill-opacity:0.85}
+	  
+	  /* supply center styles */
+	  
+	  .scnopower	{fill:black;stroke:black;}
+	  
+	  .scarryn	{fill:black;stroke:black;}
+	  .scbaratheon	{fill:black;stroke:black;}
+	  .scgreyjoy	{fill:black;stroke:black;}
+	  .sclannister	{fill:black;stroke:black;}
+	  .scmartell 	{fill:black;stroke:black;}
+	  .scstark	{fill:black;stroke:black;}
+	  .sctyrell	{fill:black;stroke:black;}
+	  .sctully	{fill:black;stroke:black;} 
+	  
+	  /* order drawing styles, stroke and fill colors should not be specified */
+	  
+	  .defaultorder	{stroke-width:3;fill:none;}
+	  .supportorder	{stroke-width:3;fill:none;stroke-dasharray:2,2;}
+	  .convoyorder	{stroke-dasharray:6,3;stroke-width:3;fill:none;}
+	  
+	  .shadoworder	{stroke-width:5;fill:none;stroke:black;}
+	  .shadowdash		{stroke-width:5;fill:none;stroke:black;opacity:0.45;}
+	  
+	  .varwidthorder  {fill:none;}
+	  .varwidthshadow {fill:none;stroke:black;}
+	  
+    ]]></style>
+    
+    <marker id="arrow"
+	    viewBox="0 0 10 10" refX="5" refY="5" 
+	    markerUnits="strokeWidth"
+	    markerWidth="4" markerHeight="4"
+	    orient="auto">
+	    <path d="M 0 0 L 10 5 L 0 10 z" />
+    </marker>
+  </defs>
+
+  <g id="MapLayer">
+%(MAP_LAYER)s
+  </g>
+  
+  <g id="SupplyCenterLayer"/>
+  <g id="OrderLayer"/>
+  <g id="UnitLayer"/>
+  <g id="DislodgedUnitLayer"/>
+  <g id="HighestOrderLayer"/>
+
+  <g id="BriefLabelLayer" visibliity="hidden">
+%(LABEL_LAYER)s
+  </g>
+
+  <!-- full name layer: NOT SUPPORTED -->
+  <g id="FullLabelLayer" visibility="hidden"/>
+
+  <g id="MouseLayer" class="invisible">
+%(MOUSE_LAYER)s
+  </g>
+</svg>

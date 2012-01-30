@@ -2,12 +2,8 @@ Installation
 ============
 Copy westerosVariants.zip into the variants folder of your jDip install.
 
-Tested with jDip 1.6.8
+Tested with jDip 1.6.8 and 1.7.0 (preview 2)
 
 Updating the map
 ================
-Use prov.svg to place unit locations, supply-centers, and text.  You must keep the file in plain .svg format.  You can then run:
-
-    $ prov2map.py prov.svg
-
-To produce jDip province meta-data and text layer.
+See src/README

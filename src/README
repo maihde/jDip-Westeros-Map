@@ -1,0 +1,15 @@
+Updating the map
+================
+The map.svg file is a Inkscape SVG.  Use it to define label, unit placement, mouse areas, etc.  It has a very
+specific format that should probably be documented somewhere, but for now you will have to dig in and get
+your hands dirty to understand what things are important and what things aren't.  Here are some hints:
+
+  * Objects must be defined in the correct layer to be useful
+  * The object "id"'s matter a lot
+  * Inkscape adds <tspan> elements when placing text.  It's best to probably copy-paste an
+    existing text item
+  * The text items need to have a correct CSS class
+  * The SC and UNIT rectangles need to be the correct size
+  * The MapLayer and MouseLayer are expected to only contain <path> elements
+
+    $ map2jdip.py > ../westeros.svg
