@@ -244,7 +244,7 @@
                 <ADJACENCY type="xc" refs="wss, ess, sta, sun" />
         </PROVINCE>
         <PROVINCE fullname="Shipbreaker Bay" shortname="sbb">
-                <ADJACENCY type="mv" refs="sha, sto, cw, tar, sns, mns" />
+                <ADJACENCY type="xc" refs="sha, sto, cw, tar, sns, mns" />
         </PROVINCE>
         <PROVINCE fullname="Seagard" shortname="sea">
                 <ADJACENCY type="mv" refs="gww, twi, blu" />
