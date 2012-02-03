@@ -166,8 +166,8 @@
         </PROVINCE>
         <PROVINCE fullname="Greywater Watch" shortname="gww">
                 <ADJACENCY type="mv" refs="mc, ff, sea, twi" />
-                <ADJACENCY type="wc" refs="ib, ff, blu" />
-                <ADJACENCY type="ec" refs="bit, mc, twi" />
+                <ADJACENCY type="wc" refs="ib, ff, sea" />
+		<ADJACENCY type="ec" refs="bit, mc-ec, twi" />
         </PROVINCE>
         <PROVINCE fullname="Lord Harroway's Town" shortname="har">
                 <ADJACENCY type="mv" refs="tri, fmi, gde, ccp, sp, bg" />
